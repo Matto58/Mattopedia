@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Mattopedia in English</title>
+	<link rel="shortcut icon" type="image/png" href="http://dl.matto58.rf.gd/mattopedia/favicon.png"/>
+</head>
+<body>
+	<h1>Welcome to Mattopedia in English</h1>
+	<img src="http://dl.matto58.rf.gd/mattopedia/favicon.png">
+	<p>Other languages: <a href="http://cz.mattopedia.rf.gd/">Cestina</a> | English</p>
+	<br>
+	<h2 id="rand">Random article: <a href="#">None</h2>
+	<a href="javascript:generate()">Generate article</a>
+	
+	<script>
+	function roundUp(num, precision) {
+		precision = Math.pow(10, precision)
+		return Math.ceil(num * precision) / precision
+	}
+	var articleList = [
+		"Water",
+		"Mattopedia (article)",
+        "Article Of The Day"
+	]
+	var articleAmt = articleList.length
+	var article = document.getElementById("rand")
+	var randNum = roundUp(Math.random() * articleAmt, 0)
+	
+	function generate() {
+		randNum = roundUp(Math.random() * articleAmt, 0)
+		// console.log(randNum)
+		article.innerHTML = "Random article: <a href=\"article/" + articleList[randNum-1] + "\">" + articleList[randNum-1] + "</a>"
+	}
+	</script>
+</body>
+</html>
